@@ -1,0 +1,2 @@
+#!/bin/bash
+rm -rf /etc/init.d/<% PACKAGE_NAME %> /usr/lib/<% PACKAGE_NAME %>/

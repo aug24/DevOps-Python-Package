@@ -1,0 +1,13 @@
+#!/bin/bash
+cd $(dirname $0)
+cd ../
+PACKAGE_NAME=$(basename $(pwd))
+
+fpm --name "$PACKAGE_NAME" \
+    --after-install package/after-install \
+    --before-install package/before-install \
+    --after-remove package/after-remove \
+    --before-remove package/before-remove \
+    --template-scripts \
+    --template-value PACKAGE_NAME=$PACKAGE_NAME 
+    .
