@@ -1,1 +1,4 @@
-sinatra
+bottle
+argparse
+yaml
+dictconfig
