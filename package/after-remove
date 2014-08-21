@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf /etc/init.d/<% PACKAGE_NAME %> /usr/lib/<% PACKAGE_NAME %>/
+rm -rf /etc/init.d/<% package_name %> /usr/lib/<% package_name %>/

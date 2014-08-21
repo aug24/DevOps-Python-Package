@@ -1,2 +1,2 @@
 #!/bin/bash
-service <% PACKAGE_NAME %> stop
+service <% package_name %> stop

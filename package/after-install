@@ -1,4 +1,4 @@
 #!/bin/bash
-ln -s /usr/lib/<% PACKAGE_NAME %>/service/service /etc/init.d/<% PACKAGE_NAME %>
-rm -rf /usr/lib/<% PACKAGE_NAME %>/logs/
-mkdir /var/log/<% PACKAGE_NAME %>/ /usr/lib/<% PACKAGE_NAME %>/logs/
+ln -s /usr/lib/<% package_name %>/service/service /etc/init.d/<% package_name %>
+rm -rf /usr/lib/<% package_name %>/logs/
+mkdir /var/log/<% package_name %>/ /usr/lib/<% package_name %>/logs/

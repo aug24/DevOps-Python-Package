@@ -1,13 +1,18 @@
 #!/bin/bash
 cd $(dirname $0)
 cd ../
-PACKAGE_NAME=$(basename $(pwd))
+PACKAGE_NAME=$(basename $(pwd) | tr 'A-Z' 'a-z' | tr '_' '-')
+echo "Packaging as $PACKAGE_NAME"
 
 fpm --name "$PACKAGE_NAME" \
+    -s dir \
+    -t deb \
+    -a all \
     --after-install package/after-install \
     --before-install package/before-install \
     --after-remove package/after-remove \
     --before-remove package/before-remove \
+    --verbose \
     --template-scripts \
-    --template-value PACKAGE_NAME=$PACKAGE_NAME 
+    --template-value "package_name=$PACKAGE_NAME"  \
     .
