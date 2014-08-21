@@ -1,0 +1,25 @@
+#!/bin/bash
+NEW_NAME=$1; shift
+NEW_REMOTE=$1; shift
+
+if [[ -z $NEW_NAME ]]; then
+   echo "New name is a required parameter"
+   exit 1
+fi
+
+#Clean up
+cd $(dirname $0)/..
+rm -rf clone .git
+
+#Rename and set remote if specified
+OLD_NAME=$(basename $(pwd))
+cd ..
+mv $OLD_NAME $NEW_NAME
+cd $NEW_NAME
+git init
+git add -A
+git commit -a -m 'Initial commit'
+if [[ $NEW_REMOTE ]]; then
+   git remote add origin $NEW_REMOTE
+   git push --set-upstream origin master
+fi
