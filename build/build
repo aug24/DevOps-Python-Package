@@ -1,5 +1,5 @@
 #!/bin/bash
 cd $(dirname $0)/..
-for dep in $(cat build/dependencies); do
+for pip in $(cat build/dependencies); do
    pip install --upgrade --target=lib $pip
 done

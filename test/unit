@@ -1,2 +1,2 @@
 #!/bin/bash
-PYTHONPATH="src:lib" python init.py 
+PYTHONPATH="src:lib" python init.py --config test/config.unit.yaml --logging test/logging.unit.yaml 
