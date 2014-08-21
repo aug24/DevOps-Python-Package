@@ -1,3 +1,4 @@
 format: '%(asctime)s %(levelname)s %(message)s'
 filename: 'logs/log'
 name: HelloWorld
+loglevel: logging.INFO

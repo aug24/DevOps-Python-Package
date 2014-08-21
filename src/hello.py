@@ -17,7 +17,7 @@ class hello:
       formatter = logging.Formatter(logconfig["format"])
       handler.setFormatter(formatter)
       self.logger.addHandler(handler) 
-      self.logger.setLevel(logging.INFO)
+      self.logger.setLevel(eval(logconfig["loglevel"]))
    def sayhello(self):
       self.logger.info('Asked for a message')
       return config["message"]
